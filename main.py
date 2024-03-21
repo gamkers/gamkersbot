@@ -88,6 +88,8 @@ if command:
                 data = aicode(command)
             else:
                 data = ai(command)
+            data = data.replace("Decrypted",'')
+            data = data.replace("Base64",'')
             st.write(data)
             st.session_state.message.append({"role":"BOT","message":data})
          
