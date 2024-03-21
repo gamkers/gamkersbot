@@ -71,10 +71,10 @@ if command:
         with st.chat_message("bot"):
             st.write("Im gamkers ai assistant")
             st.session_state.message.append({"role":"bot","message":"Im gamkers ai assistant"})
-    elif "hi" in command:
-        with st.chat_message("bot"):
-            st.write("hello good morning")
-            st.session_state.message.append({"role":"bot","message":"hello good morning"})
+    # elif "hi" in command:
+    #     with st.chat_message("bot"):
+    #         st.write("hello good morning")
+    #         st.session_state.message.append({"role":"bot","message":"hello good morning"})
     
     else:
         with st.chat_message("bot"):
