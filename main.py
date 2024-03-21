@@ -13,7 +13,7 @@ genai.configure(api_key=st.secrets["gemini_api"])
 #     response = model.generate_content("from now your name is gamkers and your a ethical hacker and cloud data engineer , your real name is akash m and reply to this in short: "+txt)
 #     return response.text
 
-def ai(text):
+def aicode(text):
     # Convert text to bytes
     bytes_text = text.encode('utf-8')
     
@@ -31,12 +31,28 @@ def ai(text):
     
     return data.content
 
-
+def ai(text):
+    # Convert text to bytes
+    bytes_text = text.encode('utf-8')
+    
+    # Encode bytes to Base64
+    base64_text = base64.b64encode(bytes_text)
+    
+    encoded_text = base64_text.decode('utf-8')
+    model = ChatGoogleGenerativeAI(model="gemini-pro", convert_system_message_to_human=True, google_api_key="AIzaSyC7hJmlRUBDT6HeE1RPT7ovY1fBjgxs1jM")
+    data = model(
+    [
+        SystemMessage(content="your task is to 1st decrypt the given base64 value and 2nd you need to answer it and 3rd give a proper refrence too "),
+        HumanMessage(content= encoded_text),
+    ]
+    )
+    
+    return data.content
 
     
 
 st.title("Gamkers - HackerGPT")
-on = st.toggle('Activate feature')
+on = st.toggle('code')
 command=st.chat_input("HOW CAN I HELP YOU?")
 
 if "message" not in st.session_state:
@@ -68,7 +84,10 @@ if command:
     
     else:
          with st.chat_message("BOT"):
-            data = ai(command)
+            if on:
+                data = aicode(command)
+            else:
+                data = ai(command)
             st.write(data)
             st.session_state.message.append({"role":"BOT","message":data})
          
