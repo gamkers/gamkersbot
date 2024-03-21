@@ -83,7 +83,7 @@ if command:
                 st.write(data)
                 st.session_state.message.append({"role":"bot","message":data})
             else:
-                data=ai(command)
+                data=aicode(command)
                 st.write(data)
                 st.session_state.message.append({"role":"bot","message":data})
 
