@@ -46,7 +46,7 @@ def ai(text):
     
     return data.content
 st.title("Gamkers - HackerGPT")
-
+on = st.toggle('Generate Code')
 command=st.chat_input("HOW CAN I HELP YOU?")
 
 if "message" not in st.session_state:
@@ -56,7 +56,7 @@ for chat in st.session_state.message:
     with st.chat_message(chat["role"]):
         st.write(chat["message"])
 
-on = st.toggle('Generate Code')
+
 
 if command:
     with st.chat_message("user"):
