@@ -78,15 +78,11 @@ if command:
     
     else:
         with st.chat_message("bot"):
-            if on:
-                data=aicode(command)
-                st.write(data)
-                st.session_state.message.append({"role":"bot","message":data})
-            else:
-                data=aicode(command)
-                st.write(data)
-                st.session_state.message.append({"role":"bot","message":data})
-
+            
+            data=aicode(command)
+            st.write(data)
+            st.session_state.message.append({"role":"bot","message":data})
+         
 
 
 print(st.session_state.message)
