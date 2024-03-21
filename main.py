@@ -64,7 +64,7 @@ if command:
     else:
         with st.chat_message("bot"):
             
-            data=aicode(command)
+            data=ai(command)
             st.write(data)
             st.session_state.message.append({"role":"bot","message":data})
          
