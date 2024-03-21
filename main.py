@@ -4,16 +4,16 @@ import base64
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 genai.configure(api_key=st.secrets["gemini_api"])
-def ai(txt):
+# def ai(txt):
     
-    for m in genai.list_models():
-        if 'generateContent' in m.supported_generation_methods:
-            print(m.name)
-    model = genai.GenerativeModel('gemini-pro')
-    response = model.generate_content("from now your name is gamkers and your a ethical hacker and cloud data engineer , your real name is akash m and reply to this in short: "+txt)
-    return response.text
+#     for m in genai.list_models():
+#         if 'generateContent' in m.supported_generation_methods:
+#             print(m.name)
+#     model = genai.GenerativeModel('gemini-pro')
+#     response = model.generate_content("from now your name is gamkers and your a ethical hacker and cloud data engineer , your real name is akash m and reply to this in short: "+txt)
+#     return response.text
 
-def chat(text):
+def ai(text):
     # Convert text to bytes
     bytes_text = text.encode('utf-8')
     
@@ -66,11 +66,10 @@ if command:
     #         st.session_state.message.append({"role":"bot","message":"hello good morning"})
     
     else:
-        with st.chat_message("bot"):
-            
-            data=chat(command)
+         with st.chat_message("BOT"):
+            data = ai(command)
             st.write(data)
-            st.session_state.message.append({"role":"bot","message":data})
+            st.session_state.message.append({"role":"BOT","message":data})
          
 
 
