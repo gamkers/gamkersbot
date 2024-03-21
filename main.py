@@ -2,6 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 import base64
 from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_google_genai import ChatGoogleGenerativeAI
 genai.configure(api_key=st.secrets["gemini_api"])
 # def ai(txt):
     
