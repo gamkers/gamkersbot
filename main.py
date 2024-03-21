@@ -36,6 +36,7 @@ def ai(text):
     
 
 st.title("Gamkers - HackerGPT")
+on = st.toggle('Activate feature')
 command=st.chat_input("HOW CAN I HELP YOU?")
 
 if "message" not in st.session_state:
