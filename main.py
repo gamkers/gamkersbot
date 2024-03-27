@@ -6,7 +6,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 genai.configure(api_key=st.secrets["gemini_api"])
 
 st.set_page_config(page_title="HACKER-GPT", page_icon=":tada:", layout='wide')
-page_bg_img = f"""
+page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"] > .main {{
 background-image: linear-gradient(to right, #000000,#00ADB5 );
