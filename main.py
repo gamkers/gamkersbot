@@ -11,10 +11,10 @@ page_bg_img = f"""
 [data-testid="stAppViewContainer"] > .main {{
 background-image: linear-gradient(to right, #000000,#Ff0000 );
 opacity: 0.8;
+[data-testid="ScrollToBottomContainer"] > .main {{
+background-image: linear-gradient(to right, #000000,#Ff0000 );
+opacity: 0.8;
 
-div[class="stChatFloatingInputContainer css-usj992 ehod42b2"] > div:first-of-type {
-  background-color: red;
-}
 
 </style>
 """
