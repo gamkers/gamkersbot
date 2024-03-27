@@ -4,6 +4,21 @@ import base64
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 genai.configure(api_key=st.secrets["gemini_api"])
+
+st.set_page_config(page_title="HACKER-GPT", page_icon=":tada:", layout='wide')
+page_bg_img = f"""
+<style>
+[data-testid="stAppViewContainer"] > .main {{
+background-image: linear-gradient(to right, #000000,#00ADB5 );
+opacity: 0.8;
+
+}}
+</style>
+"""
+
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
 # def ai(txt):
     
 #     for m in genai.list_models():
