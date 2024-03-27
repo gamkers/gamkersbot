@@ -16,7 +16,15 @@ opacity: 0.8;
 </style>
 """
 
-
+st.markdown(
+    """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # def ai(txt):
