@@ -19,7 +19,7 @@ opacity: 0.8;
 st.markdown(
     """
     <style>
-    #MainMenu {visibility: hidden;}
+    MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     </style>
     """,
