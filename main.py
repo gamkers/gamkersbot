@@ -128,7 +128,7 @@ gradient_text_html = """
 
 st.markdown(gradient_text_html, unsafe_allow_html=True)
 
---st.title("Gamkers - HackerGPT")
+#st.title("Gamkers - HackerGPT")
 on = st.toggle('code')
 command=st.chat_input("HOW CAN I HELP YOU?")
 
