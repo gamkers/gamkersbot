@@ -109,8 +109,23 @@ def ai(text):
 )
     
     return data.content
+sidebar_content = """
+Introduction:
+Our AI bot, GamkersGPT, is a revolutionary tool designed for ethical hacking. With a commitment to integrity and effectiveness, it empowers users to enhance their cybersecurity efforts while adhering to ethical standards.
 
-    
+Key Features:
+- Code-based Questions: GamkersGPT excels at answering queries related to coding, offering insights into programming languages, algorithms, and best practices for secure coding.
+- Tool-based Questions: Whether it's about specific cybersecurity tools or techniques, GamkersGPT provides comprehensive responses, guiding users on the utilization and optimization of various tools in their cybersecurity arsenal.
+- Instructions: GamkersGPT offers clear and concise instructions for executing specific cybersecurity tasks, ensuring users can implement effective strategies to fortify their defenses.
+
+Example Queries:
+1. "How can I secure my website's backend code against SQL injection attacks?"
+2. "Which tools are recommended for conducting penetration testing on a network?"
+3. "Can you provide step-by-step instructions for setting up two-factor authentication on a server?"
+
+With GamkersGPT, users can trust in its expertise and ethical approach to enhance their cybersecurity practices effectively."""
+
+st.sidebar.markdown(sidebar_content)    
 gradient_text_html = """
 <style>
 .gradient-text {
@@ -123,7 +138,7 @@ gradient_text_html = """
     font-size: 3em;
 }
 </style>
-<div class="gradient-text">HackerGPT</div>
+<div class="gradient-text">GamkersGPT</div>
 """
 
 st.markdown(gradient_text_html, unsafe_allow_html=True)
