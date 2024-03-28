@@ -127,7 +127,15 @@ gradient_text_html = """
 """
 
 st.markdown(gradient_text_html, unsafe_allow_html=True)
+st.caption("AI Integrity: Ethical Hacking, Elevated - Developed by GAMKERS")
 
+model = st.radio(
+    "",
+    options=["Code", "Tools", "Instraction"],
+    index=0,
+    horizontal=True,
+)
+st.session_state["model"] = model
 #st.title("Gamkers - HackerGPT")
 on = st.toggle('code')
 command=st.chat_input("HOW CAN I HELP YOU?")
