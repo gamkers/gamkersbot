@@ -169,7 +169,7 @@ if command:
     
     else:
          with st.chat_message("BOT"):
-            st.session_state["model"] = 'Code':
+            if st.session_state["model"] = 'Code':
                 data = aicode(command)
             else:
                 data = ai(command)
