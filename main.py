@@ -137,7 +137,7 @@ model = st.radio(
 )
 st.session_state["model"] = model
 #st.title("Gamkers - HackerGPT")
-on = st.toggle('code')
+#on = st.toggle('code')
 command=st.chat_input("HOW CAN I HELP YOU?")
 
 if "message" not in st.session_state:
@@ -169,7 +169,7 @@ if command:
     
     else:
          with st.chat_message("BOT"):
-            if on:
+            st.session_state["model"] = 'Code':
                 data = aicode(command)
             else:
                 data = ai(command)
