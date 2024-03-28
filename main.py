@@ -111,8 +111,24 @@ def ai(text):
     return data.content
 
     
+gradient_text_html = """
+<style>
+.gradient-text {
+    font-weight: bold;
+    background: -webkit-linear-gradient(left, red, orange);
+    background: linear-gradient(to right, red, orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline;
+    font-size: 3em;
+}
+</style>
+<div class="gradient-text">HackerGPT</div>
+"""
 
-st.title("Gamkers - HackerGPT")
+st.markdown(gradient_text_html, unsafe_allow_html=True)
+
+--st.title("Gamkers - HackerGPT")
 on = st.toggle('code')
 command=st.chat_input("HOW CAN I HELP YOU?")
 
