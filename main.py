@@ -171,6 +171,8 @@ if command:
          with st.chat_message("BOT"):
             if st.session_state["model"] == 'Code':
                 data = aicode(command)
+            elif st.session_state["model"] == 'Tools':
+                data = aicode(command+'GIve me tool names in a list and instractions for each tools')
             else:
                 data = ai(command)
             data = data.replace("Decrypted",'')
