@@ -146,7 +146,7 @@ st.caption("AI Integrity: Ethical Hacking, Elevated - Developed by GAMKERS")
 
 model = st.radio(
     "",
-    options=["Code", "Tools", "Instraction"],
+    options=["Code", "Tools", "Instructions"],
     index=0,
     horizontal=True,
 )
