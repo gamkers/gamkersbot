@@ -170,7 +170,7 @@ if LOGGED_IN == True and agree:
           HumanMessage(content= text+"give the commands"),
       ]
       )
-  )
+  
       
       return data.content
   sidebar_content = """
