@@ -119,7 +119,7 @@ if LOGGED_IN == True and agree:
       #     HumanMessage(content= encoded_text),
       # ]
       # )
-     data = model(
+      data = model(
       [
           SystemMessage(content="you are a Ethical Hacker Who teaching the techinques and methods for ethical hacking and your a expert in handling in ethical hacking tools and your doing everything ethicaly. answer only with the code"),
           HumanMessage(content= text),
