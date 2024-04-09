@@ -31,10 +31,7 @@ page_bg_img = """
   </style>
   """
   
-selected2 = option_menu(None, ["Login", "Register"],
-                        icons=['person-fill', 'person-plus-fill'],
-                        menu_icon="cast", default_index=0, orientation="horizontal")
-  
+
   
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
