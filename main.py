@@ -58,7 +58,7 @@ genai.configure(api_key=st.secrets["gemini_api"])
 
 __login__obj = __login__(auth_token = "PK_PROD_JH8MQNVGSYM8GQGC9B423",
                     company_name = "Gamkers",
-                    width = 450, height = 350,
+                    width = 350, height = 350,
                     logout_button_name = 'Logout', hide_menu_bool = False,
                     hide_footer_bool = False,
                     lottie_url = 'https://lottie.host/9b96bd33-0590-4571-94fb-83d05b37815b/0mUKfIZ1HP.json')
