@@ -299,7 +299,7 @@ class __login__:
 
         main_page_sidebar, selected_option = self.nav_sidebar()
         if selected2 == 'Login':
-             c1, c2 = st.columns([7,3])
+            c1, c2 = st.columns([7,3])
             with c2:
                 self.login_widget()
             with c1:
