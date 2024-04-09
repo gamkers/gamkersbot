@@ -298,7 +298,16 @@ class __login__:
                 json.dump([], auth_json)
 
         main_page_sidebar, selected_option = self.nav_sidebar()
-
+        if selected2 = 'Login':
+             c1, c2 = st.columns([7,3])
+            with c2:
+                self.login_widget()
+            with c1:
+                if st.session_state['LOGGED_IN'] == False:
+                    self.animation()
+        if selected2 = 'Register':
+            self.sign_up_widget()
+        
         if selected_option == 'Login':
             # self.animation()
             # self.login_widget()
