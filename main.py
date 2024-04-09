@@ -13,12 +13,12 @@ from langchain_google_genai import (
     HarmCategory,
 )
 
-llm = ChatGoogleGenerativeAI(
-    model="gemini-pro",
-    safety_settings={
-        HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
-    },
-)
+# llm = ChatGoogleGenerativeAI(
+#     model="gemini-pro",
+#     safety_settings={
+#         HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+#     },
+# )
 
 
 page_bg_img = """
