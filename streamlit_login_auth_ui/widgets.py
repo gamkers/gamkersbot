@@ -260,7 +260,7 @@ class __login__:
                 menu_title = '',
                 menu_icon="cast", default_index=0, orientation="horizontal",
                 icons = ['box-arrow-in-right', 'person-plus'],
-                options = ['Login', 'Create Account'],
+                options = ['Login', 'Register'],
                 styles = {
                     "container": {"padding": "5px"},
                     "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px"}} )
@@ -313,7 +313,7 @@ class __login__:
                 if st.session_state['LOGGED_IN'] == False:
                     self.animation()
         
-        if selected_option == 'Create Account':
+        if selected_option == 'Register':
             self.sign_up_widget()
 
         if selected_option == 'Forgot Password?':
