@@ -5,6 +5,7 @@ import google.generativeai as genai
 import base64
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
+from streamlit_option_menu import option_menu
 page_bg_img = """
   <style>
   #MainMenu {visibility: hidden;}
@@ -30,7 +31,7 @@ page_bg_img = """
   </style>
   """
   
-selected2 = option_menu(None, ["LOgin", "Create Account"],
+selected2 = option_menu(None, ["Login", "Create Account"],
                         icons=['house', 'user'],
                         menu_icon="cast", default_index=0, orientation="horizontal")
   
