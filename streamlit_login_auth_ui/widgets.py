@@ -251,6 +251,10 @@ class __login__:
         Creates the side navigaton bar
         """
         main_page_sidebar = st.sidebar.empty()
+        selected2 = option_menu(None, ["Login", "Register"],
+                        icons=['person-fill', 'person-plus-fill'],
+                        menu_icon="cast", default_index=0, orientation="horizontal")
+  
         with main_page_sidebar:
             selected_option = option_menu(
                 menu_title = 'Gets Started',
