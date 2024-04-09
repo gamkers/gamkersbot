@@ -257,10 +257,9 @@ class __login__:
   
         # with main_page_sidebar:
         selected_option = option_menu(
-                menu_title = 'Gets Started',
                  menu_icon="cast", default_index=0, orientation="horizontal",
-                icons = ['box-arrow-in-right', 'person-plus','arrow-counterclockwise'],
-                options = ['Login', 'Create Account', 'Reset Password'],
+                icons = ['box-arrow-in-right', 'person-plus'],
+                options = ['Login', 'Create Account'],
                 styles = {
                     "container": {"padding": "5px"},
                     "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px"}} )
