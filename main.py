@@ -30,6 +30,9 @@ page_bg_img = """
   </style>
   """
   
+selected2 = option_menu(None, ["LOgin", "Create Account"],
+                        icons=['house', 'user'],
+                        menu_icon="cast", default_index=0, orientation="horizontal")
   
   
 st.markdown(page_bg_img, unsafe_allow_html=True)
