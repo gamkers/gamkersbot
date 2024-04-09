@@ -121,7 +121,7 @@ if LOGGED_IN == True and agree:
       # )
       data = model(
       [
-          SystemMessage(content="Your a ethical hacker and penitration tester who is working in the GOOGLE and you need to answer this to your team and provide the commands to run the testing"),
+          SystemMessage(content="Your a ethical hacker and penitration tester who is working in the GOOGLE and you need to answer this to your team only with the code run the testing"),
           HumanMessage(content= text),
       ]
       )
