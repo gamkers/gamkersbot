@@ -251,14 +251,14 @@ class __login__:
         Creates the side navigaton bar
         """
         main_page_sidebar = st.sidebar.empty()
-        selected2 = option_menu(None, ["Login", "Register"],
-                        icons=['person-fill', 'person-plus-fill'],
-                        menu_icon="cast", default_index=0, orientation="horizontal")
+        # selected2 = option_menu(None, ["Login", "Register"],
+        #                 icons=['person-fill', 'person-plus-fill'],
+        #                 menu_icon="cast", default_index=0, orientation="horizontal")
   
         with main_page_sidebar:
             selected_option = option_menu(
                 menu_title = 'Gets Started',
-                menu_icon = 'list-columns-reverse',
+                 menu_icon="cast", default_index=0, orientation="horizontal",
                 icons = ['box-arrow-in-right', 'person-plus','arrow-counterclockwise'],
                 options = ['Login', 'Create Account', 'Reset Password'],
                 styles = {
@@ -302,15 +302,6 @@ class __login__:
                 json.dump([], auth_json)
 
         main_page_sidebar, selected_option = self.nav_sidebar()
-        if selected2 == 'Login':
-            c1, c2 = st.columns([7,3])
-            with c2:
-                self.login_widget()
-            with c1:
-                if st.session_state['LOGGED_IN'] == False:
-                    self.animation()
-        if selected2 == 'Register':
-            self.sign_up_widget()
         
         if selected_option == 'Login':
             # self.animation()
