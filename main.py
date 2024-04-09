@@ -32,7 +32,7 @@ page_bg_img = """
   """
   
 selected2 = option_menu(None, ["Login", "Register"],
-                        icons=['house', 'address-book'],
+                        icons=['person-fill', 'person-plus-fill'],
                         menu_icon="cast", default_index=0, orientation="horizontal")
   
   
