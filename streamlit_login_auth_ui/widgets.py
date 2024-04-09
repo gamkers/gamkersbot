@@ -257,7 +257,8 @@ class __login__:
   
         # with main_page_sidebar:
         selected_option = option_menu(
-                 menu_icon="cast", default_index=0, orientation="horizontal",
+                menu_title = '',
+                menu_icon="cast", default_index=0, orientation="horizontal",
                 icons = ['box-arrow-in-right', 'person-plus'],
                 options = ['Login', 'Create Account'],
                 styles = {
