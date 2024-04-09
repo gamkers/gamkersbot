@@ -255,8 +255,8 @@ class __login__:
         #                 icons=['person-fill', 'person-plus-fill'],
         #                 menu_icon="cast", default_index=0, orientation="horizontal")
   
-        with main_page_sidebar:
-            selected_option = option_menu(
+        # with main_page_sidebar:
+        selected_option = option_menu(
                 menu_title = 'Gets Started',
                  menu_icon="cast", default_index=0, orientation="horizontal",
                 icons = ['box-arrow-in-right', 'person-plus','arrow-counterclockwise'],
