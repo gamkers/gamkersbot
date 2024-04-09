@@ -80,6 +80,48 @@ class __login__:
                 username=fetched_cookies['__streamlit_login_signup_ui_username__']
                 return username
  
+    def sign_up_widget(self) -> None:
+        """
+        Creates the sign-up widget and stores the user info in a secure way in the _secret_auth_.json file.
+        """
+        with st.form("Sign Up Form"):
+            name_sign_up = st.text_input("Name *", placeholder = 'Please enter your name')
+            valid_name_check = check_valid_name(name_sign_up)
+
+            email_sign_up = st.text_input("Email *", placeholder = 'Please enter your email')
+            valid_email_check = check_valid_email(email_sign_up)
+            unique_email_check = check_unique_email(email_sign_up)
+            
+            username_sign_up = st.text_input("Username *", placeholder = 'Enter a unique username')
+            unique_username_check = check_unique_usr(username_sign_up)
+
+            password_sign_up = st.text_input("Password *", placeholder = 'Create a strong password', type = 'password')
+
+            st.markdown("###")
+            sign_up_submit_button = st.form_submit_button(label = 'Register')
+
+            if sign_up_submit_button:
+                if valid_name_check == False:
+                    st.error("Please enter a valid name!")
+
+                elif valid_email_check == False:
+                    st.error("Please enter a valid Email!")
+                
+                elif unique_email_check == False:
+                    st.error("Email already exists!")
+                
+                elif unique_username_check == False:
+                    st.error(f'Sorry, username {username_sign_up} already exists!')
+                
+                elif unique_username_check == None:
+                    st.error('Please enter a non - empty Username!')
+
+                if valid_name_check == True:
+                    if valid_email_check == True:
+                        if unique_email_check == True:
+                            if unique_username_check == True:
+                                register_new_usr(name_sign_up, email_sign_up, username_sign_up, password_sign_up)
+                                st.success("Registration Successful!")
 
     def login_widget(self) -> None:
         """
@@ -129,48 +171,6 @@ class __login__:
         st_lottie(lottie_json, width = self.width, height = self.height)
 
 
-    def sign_up_widget(self) -> None:
-        """
-        Creates the sign-up widget and stores the user info in a secure way in the _secret_auth_.json file.
-        """
-        with st.form("Sign Up Form"):
-            name_sign_up = st.text_input("Name *", placeholder = 'Please enter your name')
-            valid_name_check = check_valid_name(name_sign_up)
-
-            email_sign_up = st.text_input("Email *", placeholder = 'Please enter your email')
-            valid_email_check = check_valid_email(email_sign_up)
-            unique_email_check = check_unique_email(email_sign_up)
-            
-            username_sign_up = st.text_input("Username *", placeholder = 'Enter a unique username')
-            unique_username_check = check_unique_usr(username_sign_up)
-
-            password_sign_up = st.text_input("Password *", placeholder = 'Create a strong password', type = 'password')
-
-            st.markdown("###")
-            sign_up_submit_button = st.form_submit_button(label = 'Register')
-
-            if sign_up_submit_button:
-                if valid_name_check == False:
-                    st.error("Please enter a valid name!")
-
-                elif valid_email_check == False:
-                    st.error("Please enter a valid Email!")
-                
-                elif unique_email_check == False:
-                    st.error("Email already exists!")
-                
-                elif unique_username_check == False:
-                    st.error(f'Sorry, username {username_sign_up} already exists!')
-                
-                elif unique_username_check == None:
-                    st.error('Please enter a non - empty Username!')
-
-                if valid_name_check == True:
-                    if valid_email_check == True:
-                        if unique_email_check == True:
-                            if unique_username_check == True:
-                                register_new_usr(name_sign_up, email_sign_up, username_sign_up, password_sign_up)
-                                st.success("Registration Successful!")
 
 
     def forgot_password(self) -> None:
