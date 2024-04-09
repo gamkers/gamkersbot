@@ -80,6 +80,53 @@ class __login__:
                 username=fetched_cookies['__streamlit_login_signup_ui_username__']
                 return username
  
+
+    def login_widget(self) -> None:
+        """
+        Creates the login widget, checks and sets cookies, authenticates the users.
+        """
+
+        # Checks if cookie exists.
+        if st.session_state['LOGGED_IN'] == False:
+            if st.session_state['LOGOUT_BUTTON_HIT'] == False:
+                fetched_cookies = self.cookies
+                if '__streamlit_login_signup_ui_username__' in fetched_cookies.keys():
+                    if fetched_cookies['__streamlit_login_signup_ui_username__'] != '1c9a923f-fb21-4a91-b3f3-5f18e3f01182':
+                        st.session_state['LOGGED_IN'] = True
+
+        if st.session_state['LOGGED_IN'] == False:
+            st.session_state['LOGOUT_BUTTON_HIT'] = False 
+
+            del_login = st.empty()
+            with del_login.form("Login Form"):
+                username = st.text_input("Username", placeholder = 'Your unique username')
+                password = st.text_input("Password", placeholder = 'Your password', type = 'password')
+
+                st.markdown("###")
+                login_submit_button = st.form_submit_button(label = 'Login')
+
+                if login_submit_button == True:
+                    authenticate_user_check = check_usr_pass(username, password)
+
+                    if authenticate_user_check == False:
+                        st.error("Invalid Username or Password!")
+
+                    else:
+                        st.session_state['LOGGED_IN'] = True
+                        self.cookies['__streamlit_login_signup_ui_username__'] = username
+                        self.cookies.save()
+                        del_login.empty()
+                        st.experimental_rerun()
+
+
+    def animation(self) -> None:
+        """
+        Renders the lottie animation.
+        """
+        lottie_json = load_lottieurl(self.lottie_url)
+        st_lottie(lottie_json, width = self.width, height = self.height)
+
+
     def sign_up_widget(self) -> None:
         """
         Creates the sign-up widget and stores the user info in a secure way in the _secret_auth_.json file.
@@ -122,55 +169,6 @@ class __login__:
                             if unique_username_check == True:
                                 register_new_usr(name_sign_up, email_sign_up, username_sign_up, password_sign_up)
                                 st.success("Registration Successful!")
-
-    def login_widget(self) -> None:
-        """
-        Creates the login widget, checks and sets cookies, authenticates the users.
-        """
-
-        # Checks if cookie exists.
-        if st.session_state['LOGGED_IN'] == False:
-            if st.session_state['LOGOUT_BUTTON_HIT'] == False:
-                fetched_cookies = self.cookies
-                if '__streamlit_login_signup_ui_username__' in fetched_cookies.keys():
-                    if fetched_cookies['__streamlit_login_signup_ui_username__'] != '1c9a923f-fb21-4a91-b3f3-5f18e3f01182':
-                        st.session_state['LOGGED_IN'] = True
-
-        if st.session_state['LOGGED_IN'] == False:
-            st.session_state['LOGOUT_BUTTON_HIT'] = False 
-
-            del_login = st.empty()
-            with del_login.form("Login Form"):
-                username = st.text_input("Username", placeholder = 'Your unique username')
-                password = st.text_input("Password", placeholder = 'Your password', type = 'password')
-
-                st.markdown("###")
-                login_submit_button = st.form_submit_button(label = 'Login')
-                register_submit_button = st.form_submit_button(label = 'Create Account')
-                if register_submit_button == True:
-                    self.sign_up_widget()
-                if login_submit_button == True:
-                    authenticate_user_check = check_usr_pass(username, password)
-
-                    if authenticate_user_check == False:
-                        st.error("Invalid Username or Password!")
-
-                    else:
-                        st.session_state['LOGGED_IN'] = True
-                        self.cookies['__streamlit_login_signup_ui_username__'] = username
-                        self.cookies.save()
-                        del_login.empty()
-                        st.experimental_rerun()
-
-
-    def animation(self) -> None:
-        """
-        Renders the lottie animation.
-        """
-        lottie_json = load_lottieurl(self.lottie_url)
-        st_lottie(lottie_json, width = self.width, height = self.height)
-
-
 
 
     def forgot_password(self) -> None:
@@ -310,8 +308,7 @@ class __login__:
             with c1:
                 if st.session_state['LOGGED_IN'] == False:
                     self.animation()
-            
-                
+        
         if selected_option == 'Create Account':
             self.sign_up_widget()
 
@@ -336,5 +333,3 @@ class __login__:
 
 # Author: Gauri Prabhakar
 # GitHub: https://github.com/GauriSP10/streamlit_login_auth_ui
-
-
