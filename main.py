@@ -6,7 +6,7 @@ import base64
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 from streamlit_option_menu import option_menu
-
+api_key=st.secrets["gemini_api"]
 from langchain_google_genai import (
     ChatGoogleGenerativeAI,
     HarmBlockThreshold,
@@ -127,7 +127,7 @@ if LOGGED_IN == True and agree:
       base64_text = base64.b64encode(bytes_text)
       
       encoded_text = base64_text.decode('utf-8')
-      model = ChatGoogleGenerativeAI(model="gemini-pro", convert_system_message_to_human=True, google_api_key="AIzaSyC7hJmlRUBDT6HeE1RPT7ovY1fBjgxs1jM",safety_settings={
+      model = ChatGoogleGenerativeAI(model="gemini-pro", convert_system_message_to_human=True, google_api_key=api_key,safety_settings={
         HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
     })
     
@@ -155,7 +155,7 @@ if LOGGED_IN == True and agree:
       base64_text = base64.b64encode(bytes_text)
       
       encoded_text = base64_text.decode('utf-8')
-      model = ChatGoogleGenerativeAI(model="gemini-pro", convert_system_message_to_human=True, google_api_key="AIzaSyC7hJmlRUBDT6HeE1RPT7ovY1fBjgxs1jM",safety_settings={
+      model = ChatGoogleGenerativeAI(model="gemini-pro", convert_system_message_to_human=True, google_api_key=api_key,safety_settings={
         HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,})
       # data = model(
       # [
