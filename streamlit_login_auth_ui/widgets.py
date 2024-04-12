@@ -259,7 +259,7 @@ class __login__:
         selected_option = option_menu(
                 menu_title = '',
                 menu_icon="cast", default_index=0, orientation="horizontal",
-                icons = ['home', 'person-plus'],
+                icons = ['house', 'person-plus'],
                 options = ['Home', 'Register'],
                 styles = {
                     "container": {"padding": "5px"},
