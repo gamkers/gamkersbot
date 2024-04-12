@@ -259,8 +259,8 @@ class __login__:
         selected_option = option_menu(
                 menu_title = '',
                 menu_icon="cast", default_index=0, orientation="horizontal",
-                icons = ['box-arrow-in-right', 'person-plus'],
-                options = ['Login', 'Register'],
+                icons = ['home', 'person-plus'],
+                options = ['Home', 'Register'],
                 styles = {
                     "container": {"padding": "5px"},
                     "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px"}} )
@@ -303,7 +303,7 @@ class __login__:
 
         main_page_sidebar, selected_option = self.nav_sidebar()
         
-        if selected_option == 'Login':
+        if selected_option == 'Home':
             # self.animation()
             # self.login_widget()
             c1, c2 = st.columns([7,3])
