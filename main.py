@@ -203,7 +203,7 @@ if LOGGED_IN == True and agree:
       font-size: 3em;
   }
   </style>
-  <div class="gradient-text">Hay Hacker</div>
+  <div class="gradient-text">Welcome User</div>
   """
   st.markdown(gradient_text_html, unsafe_allow_html=True)
   #st.markdown(gradient_text_html, unsafe_allow_html=True)
