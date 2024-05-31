@@ -128,9 +128,10 @@ if LOGGED_IN == True and agree:
       base64_text = base64.b64encode(bytes_text)
       
       encoded_text = base64_text.decode('utf-8')
-      model = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key=api_key,safety_settings={
+      model = ChatGoogleGenerativeAI(model="gemini-pro", convert_system_message_to_human=True, google_api_key=api_key,safety_settings={
         HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
     })
+
     
       # data = model(
       # [
@@ -156,8 +157,13 @@ if LOGGED_IN == True and agree:
       base64_text = base64.b64encode(bytes_text)
       
       encoded_text = base64_text.decode('utf-8')
-      model = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key=api_key,safety_settings={
-        HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,})
+
+      model = ChatGoogleGenerativeAI(model="gemini-pro", convert_system_message_to_human=True,temperature=0.2, google_api_key=api_key,safety_settings={
+        HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+    })
+      
+      
+      
       # data = model(
       # [
       #     SystemMessage(content="""your task is to 1st decrypt the given base64 value and 2nd you need to answer for the question and 3rd give a proper refrence too. Exclude how to decrypt from the out put. NOTE 
