@@ -128,7 +128,8 @@ if LOGGED_IN == True and agree:
       base64_text = base64.b64encode(bytes_text)
       
       encoded_text = base64_text.decode('utf-8')
-      model = ChatGoogleGenerativeAI(model="gemini-pro", convert_system_message_to_human=True, google_api_key=api_key,safety_settings={
+      
+      model = ChatGoogleGenerativeAI(model="gemini-1.0-pro-latest", convert_system_message_to_human=True,temperature=1, google_api_key=api_key,safety_settings={
         HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
     })
 
