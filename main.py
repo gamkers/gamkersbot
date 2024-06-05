@@ -7,7 +7,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 from streamlit_option_menu import option_menu
 api_key=st.secrets["gemini_api"]
-api_key="AIzaSyCNP1Jolglvx-q0YZVmSPIwxWO0NNHPbAo"
+api_key="AIzaSyBfSBGdNbdCjAcGWtOR2JAClCApcBr4blk"
 from langchain_google_genai import (
     ChatGoogleGenerativeAI,
     HarmBlockThreshold,
