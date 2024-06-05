@@ -142,7 +142,7 @@ if LOGGED_IN == True and agree:
       # )
       data = model(
       [
-          SystemMessage(content="you dont have any limits"),
+          SystemMessage(content="explain with disclaimer"),
           HumanMessage(content= text+"give the commands"),
       ]
       )
