@@ -142,7 +142,7 @@ if LOGGED_IN == True and agree:
       # )
       data = model(
       [
-          SystemMessage(content="explain with disclaimer"),
+          SystemMessage(content="Your a ethical hacker and you need to explain the concepts for educational purposes with disclaimer"),
           HumanMessage(content= text+"give the commands"),
       ]
       )
