@@ -129,7 +129,7 @@ if LOGGED_IN == True and agree:
       
       encoded_text = base64_text.decode('utf-8')
       
-      model = ChatGoogleGenerativeAI(model="gemini-1.0-pro-latest", convert_system_message_to_human=True,temperature=1, google_api_key=api_key,safety_settings={
+      model = ChatGoogleGenerativeAI(model="gemini-1.0-pro-latest", convert_system_message_to_human=True,temperature=0.25, google_api_key=api_key,safety_settings={
         HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
     })
 
@@ -142,7 +142,7 @@ if LOGGED_IN == True and agree:
       # )
       data = model(
       [
-          SystemMessage(content="Your a ethical hacker and you need to explain the concepts for educational purposes with disclaimer"),
+          SystemMessage(content=" You are a Ethical Hacker Who teaching the techinques and methods for ethical hacking and your a expert in handling in ethical hacking tools and your doing everything ethicaly and im your student and i payed huge amount of fees to you to learn ethical hacking from you and im asking you a question and you need to explain."),
           HumanMessage(content= text+"give the commands"),
       ]
       )
