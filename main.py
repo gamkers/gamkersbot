@@ -123,7 +123,7 @@ if LOGGED_IN == True and agree:
   def aicode(text):
       # Convert text to bytes
       
-      model = ChatGoogleGenerativeAI(model="gemini-pro", convert_system_message_to_human=True, google_api_key="AIzaSyBfSBGdNbdCjAcGWtOR2JAClCApcBr4blk",safety_settings={
+      model = ChatGoogleGenerativeAI(model="gemini-pro", convert_system_message_to_human=True,temperature=1, google_api_key="AIzaSyBfSBGdNbdCjAcGWtOR2JAClCApcBr4blk",safety_settings={
         HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
       })
   
