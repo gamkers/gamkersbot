@@ -129,6 +129,7 @@ if LOGGED_IN == True and agree:
   
       data = model(
       [
+	  SystemMessage(content="Act as a cyber security researcher and explain what you know, If dont know say 'Dont Know'"),
           HumanMessage(content= text),
       ]
       )
