@@ -129,8 +129,7 @@ if LOGGED_IN == True and agree:
   
       data = model(
       [
-	  SystemMessage(content="Act as a cyber security researcher and explain what you know, If dont know say 'Dont Know'"),
-          HumanMessage(content= text),
+          HumanMessage(content=text),
       ]
       )
       return data.content
@@ -154,7 +153,7 @@ if LOGGED_IN == True and agree:
   
       data = model(
       [
-          HumanMessage(content= text),
+          HumanMessage(content=text),
       ]
       )
   
@@ -701,17 +700,17 @@ Where did these notes come from? See the [README](README.md).
              with st.spinner('Processing...'):
                 if st.session_state["model"] == 'Code':
                     command = command.lower()
-                    command= command.replace("hack","pentest")
+                    
                     
                     data = aicode(command)
                 elif st.session_state["model"] == 'Tools':
                     command = command.lower()
-                    command= command.replace("hack","pentest")
+                    
                     
                     data = aicode(command+'GIve me tool names in a list and instractions for each tools')
                 else:
                     command = command.lower()
-                    command= command.replace("hack","pentest")
+                   
                     data = ai(command)
                 
              
