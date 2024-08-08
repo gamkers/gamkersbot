@@ -7,7 +7,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 from streamlit_option_menu import option_menu
 api_key=st.secrets["gemini_api"]
-api_key="AIzaSyCaapt_IAXszu6yvHfr8H1dkhzGTXvL0KI"
+api_key="AIzaSyA6juye03hdv573PHGZZdh8wAqOsqT0ehg"
 from langchain_google_genai import (
     ChatGoogleGenerativeAI,
     HarmBlockThreshold,
@@ -123,7 +123,7 @@ if LOGGED_IN == True and agree:
   def aicode(text):
       # Convert text to bytes
       
-      model = ChatGoogleGenerativeAI(model="gemini-pro", convert_system_message_to_human=True,temperature=1, google_api_key="AIzaSyCaapt_IAXszu6yvHfr8H1dkhzGTXvL0KI",safety_settings={
+      model = ChatGoogleGenerativeAI(model="gemini-pro", convert_system_message_to_human=True,temperature=1, google_api_key="AIzaSyA6juye03hdv573PHGZZdh8wAqOsqT0ehg",safety_settings={
         HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
       })
   
