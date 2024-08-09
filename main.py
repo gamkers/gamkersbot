@@ -33,12 +33,12 @@ page_bg_img = """
   #MainMenu {visibility: hidden;}
   footer {visibility: hidden;}
   header {visibility: hidden;}
-  [data-testid="stAppViewContainer"] > .main {{
-  background-image: linear-gradient(to right, #000000,#3c3c50);
-  opacity: 0.8;
-  
-  }}
-  .stButton>button {{
+  [data-testid="stAppViewContainer"] > .main {
+    background-image: linear-gradient(to right, #000000, #3c3c50);
+    opacity: 0.8;
+    padding: 0;
+  }
+  .stButton > button {
       color: #FFFFFF;
       border-radius: 10%;
       height: 3em;
@@ -49,7 +49,16 @@ page_bg_img = """
       backdrop-filter: blur(12.1px);
       -webkit-backdrop-filter: blur(12.1px);
       border: 1px solid #FF00FF;
-  }}
+  }
+  .stExpander {
+      margin: 0;
+      padding: 0;
+  }
+  .stMarkdown, .stText {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+  }
   </style>
   """
 st.markdown(page_bg_img, unsafe_allow_html=True)
