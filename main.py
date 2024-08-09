@@ -145,7 +145,7 @@ if LOGGED_IN and agree:
                         {
                             "task_type": "Tools",
                             "scenario": command,
-                            "focus": "tool suggestions"
+                            "focus": "tool suggestions and installation steps"
                         }
                     ).content
                     st.subheader("Suggested Tools:")
