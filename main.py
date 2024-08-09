@@ -165,6 +165,5 @@ if LOGGED_IN and agree:
                 # Store bot's response
                 st.session_state["message"].append({"role": "BOT", "message": output})
 
-    print(st.session_state["message"])
 else:
     st.warning("Please log in and agree to the terms to access the platform.")
