@@ -119,6 +119,10 @@ if agree:
             with st.spinner('Processing...'):
                 # Check the selected task type and generate the appropriate response
                 if st.session_state["model"] == 'Code':
+                    command = command.replace("hack","pentest")
+                    command = command.replace("hacking","pentesting")
+                    command = command.replace("Hack","pentest")
+                    command = command.replace("Hacks","pentest")
                     output = chain.invoke(
                         {
                             "task_type": "Code",
@@ -130,6 +134,10 @@ if agree:
                     st.write(output)
                     
                 elif st.session_state["model"] == 'Tools':
+                    command = command.replace("hack","pentest")
+                    command = command.replace("hacking","pentesting")
+                    command = command.replace("Hack","pentest")
+                    command = command.replace("Hacks","pentest")
                     output = chain.invoke(
                         {
                             "task_type": "Tools",
@@ -141,6 +149,10 @@ if agree:
                     st.write(output)
 
                 elif st.session_state["model"] == 'Instructions':
+                    command = command.replace("hack","pentest")
+                    command = command.replace("hacking","pentesting")
+                    command = command.replace("Hack","pentest")
+                    command = command.replace("Hacks","pentest")
                     output = chain.invoke(
                         {
                             "task_type": "Instruction",
