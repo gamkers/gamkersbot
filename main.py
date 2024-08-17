@@ -127,7 +127,7 @@ if agree:
                         }
                     ).content
                     st.subheader("Generated Command Snippet:")
-                    st.code(output)
+                    st.write(output)
                     
                 elif st.session_state["model"] == 'Tools':
                     output = chain.invoke(
