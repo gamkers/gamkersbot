@@ -71,24 +71,24 @@ st.markdown(gradient_text_html, unsafe_allow_html=True)
 st.caption("AI Integrity: Ethical Hacking, Elevated - Developed by GAMKERS")
 
 # Initialize login
-__login__obj = __login__(
-    auth_token="PK_PROD_JH8MQNVGSYM8GQGC9B423",
-    company_name="Gamkers",
-    width=300, height=300,
-    logout_button_name='Logout', hide_menu_bool=False,
-    hide_footer_bool=False,
-    lottie_url='https://lottie.host/9b96bd33-0590-4571-94fb-83d05b37815b/0mUKfIZ1HP.json'
-)
+# __login__obj = __login__(
+#     auth_token="PK_PROD_JH8MQNVGSYM8GQGC9B423",
+#     company_name="Gamkers",
+#     width=300, height=300,
+#     logout_button_name='Logout', hide_menu_bool=False,
+#     hide_footer_bool=False,
+#     lottie_url='https://lottie.host/9b96bd33-0590-4571-94fb-83d05b37815b/0mUKfIZ1HP.json'
+# )
 
-LOGGED_IN = __login__obj.build_login_ui()
+#LOGGED_IN = __login__obj.build_login_ui()
 st.write('')
 st.write('')
 st.write("By accessing our platform, users consent to engage in Ethical Hacking activities, strictly limited to legally authorized and defensive purposes. Unauthorized access is prohibited, and users must comply with all relevant laws and regulations. Any malicious activities, interference, or violation of intellectual property rights are strictly forbidden. By accessing our platform, users acknowledge and accept full responsibility for their activities conducted within the platform.")
 
 agree = st.checkbox('I agree')
-username = __login__obj.get_username()
+#username = __login__obj.get_username()
 
-if LOGGED_IN and agree:
+if agree:
     # Initialize session state if not already initialized
     if "message" not in st.session_state:
         st.session_state["message"] = []
