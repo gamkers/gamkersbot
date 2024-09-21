@@ -33,11 +33,11 @@ page_bg_img = """
   #MainMenu {visibility: hidden;}
   footer {visibility: hidden;}
   header {visibility: hidden;}
-  [data-testid="stAppViewContainer"] > .main {
-    background-image: linear-gradient(to right, #000000, #3c3c50);
-    opacity: 0.8;
-    padding: 0;
-  }
+    [data-testid="stAppViewContainer"] > .main {
+        background-image: linear-gradient(to right, #000000, #3c3c50);
+        opacity: 0.8;
+        padding: 0;
+    }
 
   .stExpander {
       margin: 0;
