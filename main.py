@@ -56,7 +56,7 @@ gradient_text_html = """
   <style>
   .gradient-text {
       font-weight: bold;
-      background: -webkit-linear-gradient(left, white, green);
+      background: -webkit-linear-gradient(left, white, white);
       background: linear-gradient(to green, black, green);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
