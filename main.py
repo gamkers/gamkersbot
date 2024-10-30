@@ -10,7 +10,7 @@ llm = ChatGroq(
     max_tokens=None,
     timeout=None,
     max_retries=2,
-    groq_api_key="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",
+    groq_api_key="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",
 )
 
 # Define the prompt template
