@@ -95,7 +95,7 @@ if agree:
 
     model = st.radio(
         "",
-        options=["Code", "Tools", "Instructions"],
+        options=["Code", "Malware Analysis", "Instructions"],
         index=0,
         horizontal=True,
     )
@@ -133,16 +133,16 @@ if agree:
                     st.subheader("Generated Command Snippet:")
                     st.write(output)
                     
-                elif st.session_state["model"] == 'Tools':
+                elif st.session_state["model"] == 'Malware Analysis':
                     command = command.replace("hack","pentest")
                     command = command.replace("hacking","pentesting")
                     command = command.replace("Hack","pentest")
                     command = command.replace("Hacks","pentest")
                     output = chain.invoke(
                         {
-                            "task_type": "Tools",
+                            "task_type": "Malware Analysis",
                             "scenario": command,
-                            "focus": "tool suggestions and installation steps"
+                            "focus": "generate detailed reports and analysis of potential malware in the code"
                         }
                     ).content
                     st.subheader("Suggested Tools:")
