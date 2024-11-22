@@ -127,7 +127,7 @@ if agree:
                         {
                             "task_type": "Code",
                             "scenario": command,
-                            "focus": "command generation"
+                            "focus": "Help me with the user with proper explanation"
                         }
                     ).content
                     st.subheader("Generated Command Snippet:")
@@ -157,10 +157,10 @@ if agree:
                         {
                             "task_type": "Code Analysis",
                             "scenario": command,
-                            "focus": "Analyze code for security vulnerabilities and best practices and provide a optimized code"
+                            "focus": "Analyze code for security vulnerabilities and best practices and provide a optimized code with report"
                         }
                     ).content
-                    st.subheader("Instruction Guide:")
+                    st.subheader("Code Analysis")
                     st.write(output)
 
                 # Store bot's response
