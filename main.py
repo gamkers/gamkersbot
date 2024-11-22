@@ -130,7 +130,7 @@ if agree:
                             "focus": "Help me with the user with proper explanation"
                         }
                     ).content
-                    st.subheader("Generated Command Snippet:")
+                    st.subheader("Response")
                     st.write(output)
                     
                 elif st.session_state["model"] == 'Malware Analysis':
