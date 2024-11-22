@@ -95,7 +95,7 @@ if agree:
 
     model = st.radio(
         "",
-        options=["Code", "Malware Analysis", "Instructions"],
+        options=["Code", "Malware Analysis", "Code Analysis"],
         index=0,
         horizontal=True,
     )
