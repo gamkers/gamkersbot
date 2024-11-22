@@ -95,7 +95,7 @@ if agree:
 
     model = st.radio(
         "",
-        options=["Code", "Malware Analysis", "Code Analysis"],
+        options=["Chat", "Malware Analysis", "Code Analysis"],
         index=0,
         horizontal=True,
     )
@@ -118,14 +118,14 @@ if agree:
         with st.chat_message("BOT"):
             with st.spinner('Processing...'):
                 # Check the selected task type and generate the appropriate response
-                if st.session_state["model"] == 'Code':
+                if st.session_state["model"] == 'Chat':
                     command = command.replace("hack","pentest")
                     command = command.replace("hacking","pentesting")
                     command = command.replace("Hack","pentest")
                     command = command.replace("Hacks","pentest")
                     output = chain.invoke(
                         {
-                            "task_type": "Code",
+                            "task_type": "Chat",
                             "scenario": command,
                             "focus": "Help me with the user with proper explanation"
                         }
