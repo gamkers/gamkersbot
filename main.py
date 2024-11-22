@@ -145,19 +145,19 @@ if agree:
                             "focus": "generate detailed reports and analysis of potential malware in the code"
                         }
                     ).content
-                    st.subheader("Suggested Tools:")
+                    st.subheader("Analysis Report")
                     st.write(output)
 
-                elif st.session_state["model"] == 'Instructions':
+                elif st.session_state["model"] == 'Code Analysis':
                     command = command.replace("hack","pentest")
                     command = command.replace("hacking","pentesting")
                     command = command.replace("Hack","pentest")
                     command = command.replace("Hacks","pentest")
                     output = chain.invoke(
                         {
-                            "task_type": "Instruction",
+                            "task_type": "Code Analysis",
                             "scenario": command,
-                            "focus": "step-by-step guide"
+                            "focus": "Analyze code for security vulnerabilities and best practices and provide a optimized code"
                         }
                     ).content
                     st.subheader("Instruction Guide:")
