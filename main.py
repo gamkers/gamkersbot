@@ -5,7 +5,7 @@ from langchain_core.prompts import ChatPromptTemplate
 
 # Configure the Groq-based language model
 llm = ChatGroq(
-    model="mixtral-8x7b-32768",
+    model="llama-3.3-70b-versatile",
     temperature=0,
     max_tokens=None,
     timeout=None,
