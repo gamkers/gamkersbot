@@ -4,14 +4,41 @@ from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 
 # Configure the Groq-based language model
+
+import random
+        
+        # Define your API keys
+groq_api_keys = [
+st.secrets["groq_api_key"],
+st.secrets["groq_api_key1"],
+st.secrets["groq_api_key2"],
+st.secrets["groq_api_key3"],
+st.secrets["groq_api_key4"],
+st.secrets["groq_api_key5"]
+]
+        
+groq_api_key = random.choice(groq_api_keys)
+
+
+
+
 llm = ChatGroq(
-    model="llama-3.3-70b-versatile",
-    temperature=0,
-    max_tokens=None,
-    timeout=None,
+    model="llama-3.1-8b-instant",  # Much smaller model, faster and cheaper
+    temperature=0.3,
+    max_tokens=512,  # Set reasonable limit instead of None
+    timeout=30,  # Set timeout to avoid long waits
     max_retries=2,
-    groq_api_key=st.secrets["groq_api_key"],
+    groq_api_key=groq_api_key,
 )
+
+# llm = ChatGroq(
+#     model="llama-3.3-70b-versatile",
+#     temperature=0,
+#     max_tokens=None,
+#     timeout=None,
+#     max_retries=2,
+#     groq_api_key=st.secrets["groq_api_key"],
+# )
 
 # Define the prompt template
 prompt = ChatPromptTemplate.from_messages(
