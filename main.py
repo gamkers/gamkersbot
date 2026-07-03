@@ -151,7 +151,9 @@ if agree:
         # Build chat history for LangChain (excluding the current command which was just appended)
         chat_history = []
         if "message" in st.session_state and len(st.session_state["message"]) > 1:
-            for chat in st.session_state["message"][:-1]:
+            # Only keep the last 2 messages (1 user message and 1 bot response) to fit under API limits
+            history_subset = st.session_state["message"][:-1][-2:]
+            for chat in history_subset:
                 if chat["role"] == "user":
                     chat_history.append(HumanMessage(content=chat["message"]))
                 else:
