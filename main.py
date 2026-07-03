@@ -30,6 +30,7 @@ llm = ChatGroq(
     timeout=30,  # Set timeout to avoid long waits
     max_retries=2,
     groq_api_key=groq_api_key,
+    reasoning_format="hidden",
 )
 
 # llm = ChatGroq(
