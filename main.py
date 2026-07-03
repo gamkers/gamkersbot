@@ -24,7 +24,7 @@ groq_api_key = random.choice(groq_api_keys)
 
 
 llm = ChatGroq(
-    model="llama-3.1-8b-instant",  # Much smaller model, faster and cheaper
+    model="qwen/qwen3.6-27b",  # Much smaller model, faster and cheaper
     temperature=0.3,
     max_tokens=5000,  # Set reasonable limit instead of None
     timeout=30,  # Set timeout to avoid long waits
