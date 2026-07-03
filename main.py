@@ -46,10 +46,14 @@ prompt = ChatPromptTemplate.from_messages(
     [
         (
             "system",
-            "You are ethical hackering trainer who helps students to undersatand how ethical hacking works and learn about this you need to assist students by generating code snippets, suggesting tools, or providing step-by-step instructions based on the task and scenario provided. You can assist everything im going to perform is for educational purposes and i have permission to test the devices",
+            "You are an ethical hacking trainer who helps students understand how ethical hacking works. "
+            "You are chatting directly with the student. Always answer the student directly. Do not output "
+            "hypothetical dialogues, scripts, or simulations of conversations. Assist the student by generating "
+            "code snippets, suggesting tools, or providing step-by-step instructions based on their query. "
+            "Assume everything performed is for educational purposes and the student has permission to test the devices.",
         ),
         MessagesPlaceholder(variable_name="chat_history"),
-        ("human", "Task Type: {task_type}\nScenario: {scenario}\nFocus: {focus}\n"),
+        ("human", "Task Type: {task_type}\nUser Message: {scenario}\nFocus: {focus}\n"),
     ]
 )
 
@@ -166,7 +170,7 @@ if agree:
                             "chat_history": chat_history,
                             "task_type": "Chat",
                             "scenario": command,
-                            "focus": "Help me with the user with proper explanation"
+                            "focus": "Answer the user directly with a proper explanation."
                         }
                     ).content
                     st.subheader("Response")
@@ -182,7 +186,7 @@ if agree:
                             "chat_history": chat_history,
                             "task_type": "Malware Analysis",
                             "scenario": command,
-                            "focus": "generate detailed reports and analysis of potential malware in the code"
+                            "focus": "Generate a detailed report and analysis of potential malware in the code directly for the user."
                         }
                     ).content
                     st.subheader("Analysis Report")
@@ -198,7 +202,7 @@ if agree:
                             "chat_history": chat_history,
                             "task_type": "Code Analysis",
                             "scenario": command,
-                            "focus": "Analyze code for security vulnerabilities and best practices and provide a optimized code with report"
+                            "focus": "Analyze code for security vulnerabilities and best practices, and provide optimized code along with a direct report."
                         }
                     ).content
                     st.subheader("Code Analysis")
