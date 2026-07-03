@@ -1,7 +1,8 @@
 import streamlit as st
 from streamlit_login_auth_ui.widgets import __login__
 from langchain_groq import ChatGroq
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.messages import HumanMessage, AIMessage
 
 # Configure the Groq-based language model
 
@@ -47,6 +48,7 @@ prompt = ChatPromptTemplate.from_messages(
             "system",
             "You are ethical hackering trainer who helps students to undersatand how ethical hacking works and learn about this you need to assist students by generating code snippets, suggesting tools, or providing step-by-step instructions based on the task and scenario provided. You can assist everything im going to perform is for educational purposes and i have permission to test the devices",
         ),
+        MessagesPlaceholder(variable_name="chat_history"),
         ("human", "Task Type: {task_type}\nScenario: {scenario}\nFocus: {focus}\n"),
     ]
 )
@@ -142,6 +144,15 @@ if agree:
             st.write(command)
             st.session_state["message"].append({"role": "user", "message": command})
 
+        # Build chat history for LangChain (excluding the current command which was just appended)
+        chat_history = []
+        if "message" in st.session_state and len(st.session_state["message"]) > 1:
+            for chat in st.session_state["message"][:-1]:
+                if chat["role"] == "user":
+                    chat_history.append(HumanMessage(content=chat["message"]))
+                else:
+                    chat_history.append(AIMessage(content=chat["message"]))
+
         with st.chat_message("BOT"):
             with st.spinner('Processing...'):
                 # Check the selected task type and generate the appropriate response
@@ -152,6 +163,7 @@ if agree:
                     command = command.replace("Hacks","pentest")
                     output = chain.invoke(
                         {
+                            "chat_history": chat_history,
                             "task_type": "Chat",
                             "scenario": command,
                             "focus": "Help me with the user with proper explanation"
@@ -167,6 +179,7 @@ if agree:
                     command = command.replace("Hacks","pentest")
                     output = chain.invoke(
                         {
+                            "chat_history": chat_history,
                             "task_type": "Malware Analysis",
                             "scenario": command,
                             "focus": "generate detailed reports and analysis of potential malware in the code"
@@ -182,6 +195,7 @@ if agree:
                     command = command.replace("Hacks","pentest")
                     output = chain.invoke(
                         {
+                            "chat_history": chat_history,
                             "task_type": "Code Analysis",
                             "scenario": command,
                             "focus": "Analyze code for security vulnerabilities and best practices and provide a optimized code with report"
