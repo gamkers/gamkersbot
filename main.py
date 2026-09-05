@@ -22,14 +22,14 @@ groq_api_key = random.choice(groq_api_keys)
 
 
 
-
 llm = ChatGroq(
-    model="openai/gpt-oss-120b",  # Much smaller model, faster and cheaper
+    model="openai/gpt-oss-120b",
     temperature=0.3,
-    max_tokens=5000,  # Set reasonable limit instead of None
-    timeout=30,  # Set timeout to avoid long waits
+    max_tokens=1000,      # lower this from 5000 to actually cap output length
+    timeout=30,
     max_retries=2,
     groq_api_key=groq_api_key,
+    model_kwargs={"reasoning_effort": "low"},
 )
 
 # llm = ChatGroq(
