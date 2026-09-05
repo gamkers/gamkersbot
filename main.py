@@ -29,7 +29,6 @@ llm = ChatGroq(
     timeout=30,
     max_retries=2,
     groq_api_key=groq_api_key,
-    model_kwargs={"reasoning_effort": "low"},
 )
 
 # llm = ChatGroq(
